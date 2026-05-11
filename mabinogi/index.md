@@ -83,6 +83,19 @@ permalink: /mabinogi/
     line-height: 1.6;
     color: #666;
   }
+  /* 링크 아래에 생기는 모든 점선과 밑줄 제거 */
+a, a:hover, a:focus, a:active {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* 카드 자체에 걸려있을 수 있는 하단 점선 제거 */
+.post-card, .post-card__inner {
+    border-bottom: none !important;
+    text-decoration: none !important;
+}
 </style>
 
 <div class="post-list-custom">

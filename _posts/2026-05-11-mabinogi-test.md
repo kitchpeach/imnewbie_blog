@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Getting Started with Sleek
+title: 마비노기 글 테스트
 featured-img: sleek
-categories: Mabinogi
+categories: mabinogi
 mathjax: true
 ---
 

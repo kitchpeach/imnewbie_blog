@@ -15,7 +15,7 @@ social:
 # THEME SETTINGS
 navigation: # Navigation links
   - {name: 'HOME', link: '/'}
-  - {name: '마비노기', link: '/mabinogi/index'}
+  - {name: '마비노기', link: '/mabinogi'}
   - {name: '좀보이드', link: '/zomboid'}
   - {name: '스타듀밸리', link: '/stardewvally'}
   - {name: 'CONTACT', link: '/contact'}

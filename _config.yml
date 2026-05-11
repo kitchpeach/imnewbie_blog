@@ -3,7 +3,7 @@ title: 아임뉴비 블로그 # your site title
 author: imnewbie # You :P
 description: > # Meta description of Homepage
   imnewbie game blog
-baseurl: "/imnewbie" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://imnewbie.cc" # the base hostname & protocol for your site, e.g. http://example.com
 
 # SEO PLUGIN

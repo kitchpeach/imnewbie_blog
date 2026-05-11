@@ -4,31 +4,39 @@ title: "Mabinogi"
 permalink: /mabinogi/
 ---
 <style>
-  /* 1. 아임뉴비님이 말씀하신 내부 여백(Padding) 강제 적용 */
-  .post-card__content, .post-card__inner {
-    padding: 30px !important; /* 메인 페이지의 시원한 여백 값 */
-    background: #fff; /* 카드 배경색 */
+  /* 1. 컨테이너 너비를 메인과 동일하게 1170px로 고정 */
+  .page .container {
+    max-width: 1170px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
   }
 
-  /* 2. 제목과 날짜 사이의 간격 조정 */
-  .post-card__title {
-    margin-top: 0 !important;
-    margin-bottom: 10px !important;
-    font-size: 1.4rem !important; /* 메인과 폰트 크기 맞춤 */
+  /* 2. 카드 한 개의 너비를 메인(33.333%)과 똑같이 강제 고정 */
+  @media (min-width: 992px) {
+    .post-container {
+      width: 33.33333333% !important; /* PC에서 무조건 3단 배열 크기 */
+      float: left; /* 그리드가 깨질 경우를 대비 */
+    }
   }
 
-  /* 3. 요약글(Excerpt) 여백 */
-  .post-card__excerpt {
-    margin-bottom: 0 !important;
-    color: #666;
-  }
-
-  /* 4. 카드 자체에 그림자나 테두리가 없다면 추가 (선택사항) */
+  /* 3. 아까 찾으신 내부 패딩과 높이값 고정 */
   .post-card {
-    border: 1px solid #eee;
-    border-radius: 5px;
-    overflow: hidden;
-    height: 100%; /* 카드 높이 통일 */
+    display: block;
+    min-height: 400px; /* 전체 카드 높이 감각 맞추기 */
+    background: #fff;
+    border: 1px solid #efefef;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 메인 같은 은은한 그림자 */
+  }
+
+  .post-card__content {
+    padding: 30px !important;
+  }
+
+  .post-card__image {
+    height: 210px !important; /* 이미지 영역 높이 고정 */
+    background-size: cover;
+    background-position: center;
   }
 </style>
 

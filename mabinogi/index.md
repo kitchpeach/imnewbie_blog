@@ -4,15 +4,31 @@ title: "Mabinogi"
 permalink: /mabinogi/
 ---
 <style>
-  /* 좁은 본문 폭을 메인처럼 넓게 확장합니다 */
-  .page .container {
-    max-width: 1200px !important; /* 메인 페이지와 비슷한 너비 */
-    width: 95% !important;
+  /* 1. 아임뉴비님이 말씀하신 내부 여백(Padding) 강제 적용 */
+  .post-card__content, .post-card__inner {
+    padding: 30px !important; /* 메인 페이지의 시원한 여백 값 */
+    background: #fff; /* 카드 배경색 */
   }
-  
-  /* 카드 사이의 간격을 메인과 맞춥니다 */
-  .post-container {
-    margin-bottom: 30px;
+
+  /* 2. 제목과 날짜 사이의 간격 조정 */
+  .post-card__title {
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+    font-size: 1.4rem !important; /* 메인과 폰트 크기 맞춤 */
+  }
+
+  /* 3. 요약글(Excerpt) 여백 */
+  .post-card__excerpt {
+    margin-bottom: 0 !important;
+    color: #666;
+  }
+
+  /* 4. 카드 자체에 그림자나 테두리가 없다면 추가 (선택사항) */
+  .post-card {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 100%; /* 카드 높이 통일 */
   }
 </style>
 

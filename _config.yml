@@ -14,9 +14,11 @@ social:
 
 # THEME SETTINGS
 navigation: # Navigation links
-  - {name: 'Home', link: '/'}
-  - {name: 'About', link: '/about'}
-  - {name: 'Contact', link: '/contact'}
+  - {name: 'HOME', link: '/'}
+  - {name: '마비노기', link: '/mabinogi'}
+  - {name: '좀보이드', link: '/zomboid'}
+  - {name: '스타듀밸리', link: '/stardewvally'}
+  - {name: 'CONTACT', link: '/contact'}
 
 tagline: >
   게임공략과 정보가 가득한 아임뉴비 블로그

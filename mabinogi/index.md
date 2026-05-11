@@ -1,78 +1,96 @@
 ---
-layout: page
+layout: default
 title: "Mabinogi"
 permalink: /mabinogi/
 ---
 
 <style>
-  /* 메인 페이지의 넓은 컨테이너 복제 */
-  .page .container {
+  /* 1. 상단 배너(Hero)는 유지하되, 아래 본문만 넓게 조절 */
+  .site__content {
     max-width: 1170px !important;
-    width: 100% !important;
-    margin: 0 auto !important;
+    margin: 40px auto !important;
+    padding: 0 15px !important;
   }
 
-  /* 카드 이미지 영역: 메인과 동일한 비율과 디자인 */
-  .post-card__thumb {
+  /* 2. 카드 그리드 시스템 (3열 나열의 핵심) */
+  .post-list-custom {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px; /* 부모 마진 상쇄 */
+  }
+
+  .post-card-wrap {
+    width: 33.333%; /* 무조건 3열 */
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 992px) { .post-card-wrap { width: 50%; } }
+  @media (max-width: 767px) { .post-card-wrap { width: 100%; } }
+
+  /* 3. 카드 디자인 복제 (그림자, 둥근 모서리) */
+  .post-card-custom {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* 메인의 부드러운 그림자 */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid #f0f0f0;
+  }
+
+  /* 4. 이미지 영역 (높이와 비율) */
+  .post-card__thumb-custom {
     position: relative;
-    position: relative;
-    display: block;
-    background-color: #333; /* 이미지 없을 때 배경색 */
     height: 210px;
     overflow: hidden;
-    margin: 0;
+    background: #333;
   }
 
-  .post-card__thumb img {
+  .post-card__thumb-custom img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  /* 카테고리 뱃지 디자인 (메인과 동일) */
-  .post-card__label {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    z-index: 10;
-  }
-
-  .label {
-    background: rgba(255,255,255,0.2);
-    color: #fff;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 11px;
-    text-transform: uppercase;
-    border: 1px solid rgba(255,255,255,0.5);
-  }
-
-  /* 카드 내부 텍스트 여백 */
-  .post-card__inner {
-    padding: 30px !important;
+  /* 5. 텍스트 영역 여백 */
+  .post-card__inner-custom {
+    padding: 30px;
+    flex-grow: 1;
     display: block;
     text-decoration: none !important;
+    color: inherit;
   }
 
-  .post-card {
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    overflow: hidden;
-    height: 100%;
-    border: 1px solid #eee;
+  .post-card__header h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.4rem;
+    line-height: 1.3;
+    font-weight: 700;
+    color: #333;
+  }
+
+  .post-card__meta {
+    font-size: 13px;
+    color: #bbb;
+  }
+
+  .post-card__excerpt {
+    margin-top: 15px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666;
   }
 </style>
 
-<div class="row">
+<div class="post-list-custom">
   {% for post in site.categories.mabinogi %}
-  <div class="col-xs-12 col-sm-6 col-md-4 post-container" style="margin-bottom: 30px;">
-    <div class="post-card">
+  <div class="post-card-wrap">
+    <div class="post-card-custom">
       
-      <div class="post-card__thumb">
-        <span class="post-card__label">
-          <span class="label">Mabinogi</span>
-        </span>
+      <div class="post-card__thumb-custom">
         <a href="{{ site.baseurl }}{{ post.url }}">
           {% if post.featured-img %}
             <img src="{{ site.baseurl }}/assets/img/posts/{{ post.featured-img }}.jpg" alt="{{ post.title }}">
@@ -82,12 +100,12 @@ permalink: /mabinogi/
         </a>
       </div>
 
-      <a class="post-card__inner" href="{{ site.baseurl }}{{ post.url }}">
+      <a class="post-card__inner-custom" href="{{ site.baseurl }}{{ post.url }}">
         <div class="post-card__header">
-          <h2 class="post-card__title" style="font-size: 1.4rem; margin-top: 0; color: #333;">{{ post.title }}</h2>
-          <span class="post-card__meta" style="color: #999; font-size: 13px;">{{ post.date | date: "%b %d, %Y" }}</span>
+          <h2>{{ post.title }}</h2>
+          <span class="post-card__meta">{{ post.date | date: "%b %d, %Y" }}</span>
         </div>
-        <p class="post-card__excerpt" style="color: #666; margin-top: 15px;">
+        <p class="post-card__excerpt">
           {{ post.content | strip_html | truncatewords: 15 }}
         </p>
       </a>

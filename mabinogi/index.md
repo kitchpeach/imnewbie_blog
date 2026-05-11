@@ -1,8 +1,20 @@
 ---
-layout: default
+layout: page
 title: "Mabinogi"
 permalink: /mabinogi/
 ---
+<style>
+  /* 좁은 본문 폭을 메인처럼 넓게 확장합니다 */
+  .page .container {
+    max-width: 1200px !important; /* 메인 페이지와 비슷한 너비 */
+    width: 95% !important;
+  }
+  
+  /* 카드 사이의 간격을 메인과 맞춥니다 */
+  .post-container {
+    margin-bottom: 30px;
+  }
+</style>
 
 <div class="row">
   {% for post in site.categories.mabinogi %}

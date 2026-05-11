@@ -1,10 +1,8 @@
 # SITE CONFIGURATION
 title: 아임뉴비 블로그 # your site title
 author: imnewbie # You :P
-description: >imnewbie game blog # Meta description of Homepage
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: > # Meta description of Homepage
+  imnewbie game blog
 baseurl: "/imnewbie" # the subpath of your site, e.g. /blog
 url: "http://imnewbie.cc" # the base hostname & protocol for your site, e.g. http://example.com
 
